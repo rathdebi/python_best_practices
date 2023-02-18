@@ -1,0 +1,26 @@
+constants.py--
+-------------------
+model_eval_dict = {"accuracy": [],
+		  "error":[],
+		"confidence_int_90":[],
+		"confidence_int_95":[],}
+
+
+model.py
+----------------
+def dict_key_val(model_eval_dict,**key_val):
+	if model_dict.keys() and (model_eval_dict.keys()==key_val.keys()):
+		for key, value in key_val.items():
+			model_eval_dict[key] += value # append
+	elif not key_val.keys():
+		model_eval_dict.update(key_val) # update new 
+	else:
+	              raise Exception("not a proper dictionary with required (keys-values)")
+	return model_eval_dict
+
+			
+
+
+
+
+
